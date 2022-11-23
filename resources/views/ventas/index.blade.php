@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="{{ route('products.store') }}" method="post" class="needs-validation" novalidate>
+                <form action="{{ route('ventas.store') }}" method="post" class="needs-validation" novalidate>
                     @csrf
                     <td class="col-3">  
                         <div class="form-floating mb-3">

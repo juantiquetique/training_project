@@ -39,7 +39,14 @@ class VentasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Ventas::create($request->all());
+        $producto = Products::findOrFail($request->products_id);
+        $cantidadActual = $producto->Cantidad;
+        $cantidadNueva = $cantidadActual - $request->cantidad;
+        $producto->Cantidad = $cantidadNueva;
+        $producto->save();
+
+        return redirect()->route('ventas.index')->with('exito', '¡La venta se a realizado satisfactoriamente!');;
     }
 
     /**

@@ -11,6 +11,7 @@ class ventas extends Model
     protected $fillable = [
         'products_id',
         'cantidad',
+        'precio_unitario',
         'subtotal'
     ];
 }
