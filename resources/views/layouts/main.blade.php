@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="{{ asset('css/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <title>@yield('titulo')</title>
+    @livewireStyles
 </head>
 <body id="prueba">
     <nav class="navbar shadow colorN">
         <button class="navbar-toggler ms-4 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class=""><i class="text-dark fa-solid fa-screwdriver-wrench"></i></span>
         </button>
-        <div class="container">
+        <div class="container text-black">
             <a class="navbar-brand me-5 p-2 fs-4" href="">Gestión de productos</a>
             <form class="d-flex" role="search">
                 <input class="form-control ms-2" type="search" placeholder="Buscar..." name="buscar" aria-label="buscar">
                 <button class="btn btn-dark ms-2" type="submit">Buscar</button>
                 <div>
-                    <a class="dropdown-item rounded ms-3 fs-3" href="{{ route('ventas.index') }}"><i class="fa-solid fa-file-invoice-dollar" ></i></a>
+                    <a class="dropdown-item rounded ms-3 fs-3" href="{{ route('detalleVenta.index') }}"><i class="fa-solid fa-cash-register"></i></a>
                 </div>
             </form>
             <div class="offcanvas offcanvas-start colorN" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="olffcanvasDarkNavbarLabel">
@@ -31,12 +32,17 @@
                 <div class="offcanvas-body ">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 fs-5">
                         <li>
-                            <a class="dropdown-item rounded mb-2" href="{{ route('categorias.index') }}">Categorias</a>
+                            <a class="dropdown-item rounded mb-2" href="{{ route('categorias.index') }}">Categorías</a>
                         </li>
                         <li>
                             <a class="dropdown-item rounded mb-2" href="{{ route('products.index') }}">Productos</a>
                         </li>
-                        <a class="dropdown-item rounded mb-2" href="{{ route('ventas.index') }}">Venta</a>
+                        <li>
+                            <a class="dropdown-item rounded mb-2" href="{{ route('detalleVenta.index') }}">Detalle Ventas</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item rounded mb-2" href="{{ route('ventas.index') }}">Venta</a>
+                        </li>
                         <li>
                             <a class="dropdown-item rounded mb-2" href="{{ route('abastecimiento.index') }}">Abastecimiento</a>
                         </li>                       
@@ -74,5 +80,6 @@
 
     <script src="{{ asset('css/bootstrap/js/bootstrap.bundle.js') }}"></script>
     @yield('scripts')
+    @livewireScripts
 </body>
 </html>

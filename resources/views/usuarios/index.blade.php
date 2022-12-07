@@ -17,10 +17,11 @@
     @endif
     <div class="my-3">
         @if(count($usuarios) > 0)
-        <table class="table table-hover">
+        <table class="table text-white">
             <thead>
                 <tr>
                     <th>Nombre</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>

@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
-@section('titulo', 'Nueva categoria')
+@section('titulo', 'Nueva categoría')
 
 @section('content')
-    <form action="{{ route('categorias.store') }}" method="post" class="needs-validation" novalidate>
+    <form action="{{ route('categorias.store') }}" method="post" class="needs-validation text-black" novalidate>
         @csrf
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>

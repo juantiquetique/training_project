@@ -16,7 +16,7 @@
     @endif
     @can(['administrador'])
         <div class="mt-3">
-            <a href="{{ route('products.create') }}" class="btn btn-dark">
+            <a href="{{ route('products.create') }}" class="btn btn-secondary">
                 Registrar nuevo producto
             </a>
         </div>
@@ -24,7 +24,7 @@
 
     <div class="my-3">
         @if(count($products) > 0)
-        <table class="table table-hover">
+        <table class="table text-white">
             <thead>
                 <tr>
                     <th>Nombre producto</th>

@@ -1,15 +1,16 @@
 @extends('layouts.main')
 
-@section('titulo', 'Editar categoria')
+@section('titulo', 'Editar categoría')
 
 @section('content')
-    <form action="{{ route('categorias.update', $categorias->id) }}" method="post" class="needs-validation" novalidate>
+    <form action="{{ route('categorias.update', $categorias->id) }}" method="post" class="needs-validation text-black" novalidate>
         @method('PUT')
         @csrf
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" value="{{ $categorias->nombre }}" required>
             <label for="nombre">Nombre</label>
         </div>
+        <a href="{{ route('categorias.index') }}" class="btn btn-secondary">Volver</a>
         <button type="submit" class="btn btn-secondary">Guardar</button>
     </form>
 @endsection

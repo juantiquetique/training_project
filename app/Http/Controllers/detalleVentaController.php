@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\products;
 use App\Models\ventas;
+use App\Models\detalleVenta;
 use Illuminate\Http\Request;
 
-class VentasController extends Controller
+class detalleVentaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +18,8 @@ class VentasController extends Controller
     {
         //consultar productos
         $products = Products::orderBy('nombre', 'asc')
-                                ->get();
-        return view('ventas.index', compact('products'));
+                             ->get();
+        return view('detalleVenta.index', compact('products'));
     }
 
     /**
@@ -39,16 +40,23 @@ class VentasController extends Controller
      */
     public function store(Request $request)
     {
-        
+        detalleVenta::create($request->all());
+        $producto = Products::findOrFail($request->products_id);
+        $cantidadActual = $producto->Cantidad;
+        $cantidadNueva = $cantidadActual - $request->cantidad;
+        $producto->Cantidad = $cantidadNueva;
+        $producto->save();
+
+        return redirect()->route('detalleVenta.index')->with('exito', '¡La venta se a realizado satisfactoriamente!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ventas  $ventas
+     * @param  \App\Models\detalleVenta  $detalleVenta
      * @return \Illuminate\Http\Response
      */
-    public function show(ventas $ventas)
+    public function show(detalleVenta $detalleVenta)
     {
         //
     }
@@ -56,10 +64,10 @@ class VentasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ventas  $ventas
+     * @param  \App\Models\detalleVenta  $detalleVenta
      * @return \Illuminate\Http\Response
      */
-    public function edit(ventas $ventas)
+    public function edit(detalleVenta $detalleVenta)
     {
         //
     }
@@ -68,10 +76,10 @@ class VentasController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ventas  $ventas
+     * @param  \App\Models\detalleVenta  $detalleVenta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ventas $ventas)
+    public function update(Request $request, detalleVenta $detalleVenta)
     {
         //
     }
@@ -79,11 +87,12 @@ class VentasController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ventas  $ventas
+     * @param  \App\Models\detalleVenta  $detalleVenta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ventas $ventas)
+    public function destroy(detalleVenta $detalleVenta)
     {
-        //
+        // $detalleVenta = Products::findOrFail($id);
+        return redirect()->route('detalleVenta.index');
     }
 }

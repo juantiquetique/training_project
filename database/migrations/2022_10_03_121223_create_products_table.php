@@ -19,7 +19,6 @@ class CreateProductsTable extends Migration
             $table->double('precio',8,2);
             $table->integer('Cantidad');
             $table->foreignId('categoria_id')->constrained('categorias');
-            // $table->foreignId('valorAbastecimiento')->constrained('abastecimientos');
             $table->timestamps();
         });
     }
@@ -34,9 +33,6 @@ class CreateProductsTable extends Migration
         Schema::table('products', function (Blueprint $table) {
             $table->dropForeign('products_categoria_id_foreign');
         });
-        // Schema::table('products', function (Blueprint $table) {
-        //     $table->dropForeign('products_valorAbastecimiento_foreign');
-        // });
         Schema::dropIfExists('products');
     }
 }

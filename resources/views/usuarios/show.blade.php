@@ -6,7 +6,7 @@
     <div class="row my-3">
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
-            <table class="table table-bordered mt-3">
+            <table class="table table-bordered mt-3 text-white">
                 <tbody>
                     <tr>
                         <td class="fw-bold">Nombre</td>

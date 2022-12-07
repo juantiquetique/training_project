@@ -12,6 +12,5 @@ class products extends Model
         'precio',
         'Cantidad',
         'categoria_id',
-        // 'valorAbastecimiento'
     ];
 }

@@ -3,7 +3,7 @@
 @section('titulo', 'Editar producto')
 
 @section('content')
-    <form action="{{ route('products.update' , $products->id) }}" method="post" class="needs-validation" novalidate>
+    <form action="{{ route('products.update' , $products->id) }}" method="post" class="needs-validation text-black" novalidate>
         @method('PUT')
         @csrf
         <div class="form-floating mb-3">
@@ -15,7 +15,7 @@
             <label for="precio">Precio</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="Cantidad" name="Cantidad" placeholder="Cantidad" value="{{ $products->Cantidad }}">
+            <input type="number" class="form-control" id="Cantidad" name="Cantidad" placeholder="Cantidad" value="{{ $products->Cantidad }}" disabled>
             <label for="Cantidad">Cantidad</label>
         </div>
         <div class="form-floating mb-3">
@@ -27,6 +27,7 @@
             </select>
             <label for="categoria_id">Categoria</label>
         </div>
+        <a href="{{ route('products.index') }}" class="btn btn-secondary">Volver</a>
         <button type="submit" class="btn btn-secondary">Guardar</button>
     </form>
 @endsection

@@ -10,9 +10,9 @@
     </div>
     @endif
     <div class="my-3">
-        <table class="table table-hover" >
+        <table class="table" >
             <thead>
-                <tr>
+                <tr class="text-white">
                     <th>Nombre</th>
                     <th>Cantidad</th>
                     <th>Valor </th>

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('titulo', 'Categorias')
+@section('titulo', 'Categorías')
 
 @section('content')
     @if($query)
@@ -18,13 +18,13 @@
     @can(['administrador'])
         <div class="mt-3">
             <a href="{{ route('categorias.create') }}" class="btn btn-secondary">
-                Crear nueva categoria
+                Crear nueva categoría
             </a>
         </div>
     @endcan
     <div class="my-3">
         @if(($categorias) )
-        <table class="table table-hover">
+        <table class="table text-white">
             <thead>
                 <tr>
                     <th>Nombre</th>

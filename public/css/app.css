@@ -373,7 +373,7 @@ video {
      -moz-appearance: none;
           appearance: none;
   background-color: #000000;
-  border-color:#FFAB4A;
+  border-color:#F2A007;
   border-width: 1px;
   border-radius: 0px;
   padding-top: 0.5rem;
@@ -923,7 +923,7 @@ select {
 .border-gray-300 {
   --tw-border-opacity: 1;
   border:solid 3px;
-  border-color:#FFAB4A;
+  border-color:#F2A007;
   
   
 }
@@ -937,7 +937,7 @@ select {
 }
 .border-transparent {
   border: solid 3px;
-  border-color:#FFAB4A;
+  border-color:#F2A007;
   
 }
 .border-indigo-400 {
@@ -1258,7 +1258,7 @@ select {
 }
 .focus\:border-indigo-300:focus {
   --tw-border-opacity: 1;
-  border-color:#FFAB4A;
+  border-color:#F2A007;
 }
 .focus\:border-gray-900:focus {
   --tw-border-opacity: 1;

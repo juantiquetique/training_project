@@ -3,7 +3,7 @@
 @section('titulo', 'Nuevo producto')
 
 @section('content')
-    <form action="{{ route('products.store') }}" method="post" class="needs-validation" novalidate>
+    <form action="{{ route('products.store') }}" method="post" class="needs-validation text-black" novalidate>
         @csrf
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
@@ -26,6 +26,7 @@
             </select>
             <label for="categoria_id">Categoria</label>
         </div>
+        <a href="{{ route('products.index') }}" class="btn btn-secondary">Volver</a>
         <button type="submit" class="btn btn-secondary">Guardar</button>
     </form>
 @endsection

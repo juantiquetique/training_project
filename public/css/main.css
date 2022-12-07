@@ -1,16 +1,18 @@
 .colorN{
-    background-color:#FFAB4A;
+    background-color:#F2A007;
 }
 #prueba{
     background-color: #FFFCEC;
 }
 #aj{
-    color:#FFAB4A;
+    color:#F2A007;
     font-size: 100px;
 }
 
 body{
+    background-image: url('../images/fondo.jpg');
     background-color: #000000;
+    color: #FFFCEC;
 }
 #textow{
     padding-bottom: 120px;
@@ -20,6 +22,6 @@ body{
 }
 
 #abastecimiento{
-    background-color:#FFAB4A;
-    border-color: #FFAB4A;
+    background-color:#F2A007;
+    border-color: #F2A007;
 }

@@ -3,7 +3,7 @@
         <x-slot name="logo">
              <div class="container mt-5">
                 <style type="text/css">
-                    #aj {color:#FFAB4A;
+                    #aj {color:#F2A007;
                         font-size: 100px;
                         margin: -18px }
                     #al{

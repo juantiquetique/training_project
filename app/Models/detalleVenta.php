@@ -5,10 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ventas extends Model
+class detalleVenta extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'valorTotal'
+        'ventas_id',
+        'products_id',
+        'cantidad',
+        'valor_unitario',
+        'subtotal'
     ];
 }
+
