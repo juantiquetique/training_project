@@ -16,7 +16,7 @@
             <span class=""><i class="text-dark fa-solid fa-screwdriver-wrench"></i></span>
         </button>
         <div class="container text-black">
-            <a class="navbar-brand me-5 p-2 fs-4" href="">Gestión de productos</a>
+            <a class="navbar-brand fs-4 ">Gestión de productos</a> {{-- me-5 p-2  --}}
             <form class="d-flex" role="search">
                 <input class="form-control ms-2" type="search" placeholder="Buscar..." name="buscar" aria-label="buscar">
                 <button class="btn btn-dark ms-2" type="submit">Buscar</button>

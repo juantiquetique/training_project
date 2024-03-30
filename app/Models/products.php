@@ -9,8 +9,9 @@ class products extends Model
 {
     protected $fillable = [
         'nombre',
-        'precio',
+        'precioVenta', //cambie la palabra precio a precioVenta
         'Cantidad',
         'categoria_id',
+        'valorUnitario' //esto es nuevo
     ];
 }

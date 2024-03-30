@@ -10,11 +10,11 @@
             <label for="nombre">Nombre</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="precio" name="precio" placeholder="precio" required>
-            <label for="precio">Precio</label>
+            <input type="number" class="form-control" id="precioVenta" name="precioVenta" placeholder="precioVenta" required>
+            <label for="precioVenta">Precio de venta</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="Cantidad" name="Cantidad" placeholder="Cantidad" required>
+            <input type="number" class="form-control" id="Cantidad" name="Cantidad" placeholder="Cantidad" onkeydown="upperCaseF(this)" required>
             <label for="Cantidad">Cantidad</label>
         </div>
         <div class="form-floating mb-3">
@@ -26,12 +26,17 @@
             </select>
             <label for="categoria_id">Categoria</label>
         </div>
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="valorUnitario" name="valorUnitario" placeholder="valorUnitario" required>
+            <label for="valorUnitario">Valor Unitario</label> 
+        </div>
         <a href="{{ route('products.index') }}" class="btn btn-secondary">Volver</a>
         <button type="submit" class="btn btn-secondary">Guardar</button>
     </form>
 @endsection
 
 @section('scripts')
+    <script src="{{ resource_path('/js/validCant.js') }}"></script>
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
     (() => {

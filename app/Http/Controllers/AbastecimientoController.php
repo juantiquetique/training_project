@@ -43,7 +43,11 @@ class AbastecimientoController extends Controller
         $cantidadActual = $producto->Cantidad;
         $cantidadNueva = $cantidadActual + $request->cantidad_id;
         $producto->Cantidad = $cantidadNueva;
-        $producto->save();
+
+        $valorUnitarioActual = $producto->valorUnitario; //esto
+        $valorUnitarioNuevo = $request->valor;           //es
+        $producto->valorUnitario = $valorUnitarioNuevo;  //nuevo
+        $producto->save();  
 
         return redirect()->route('abastecimiento.index')->with('exito', '¡El abastecimiento se a realizado satisfactoriamente!');;
     }

@@ -14,7 +14,7 @@
                     </tr>
                     <tr>
                         <td class="fw-bold" id="precio">Precio Venta</td>
-                        <td>{{ $products->precio}}</td>
+                        <td>{{ $products->precioVenta}}</td> {{-- cambie la palabra precio a precioVenta--}}
                     </tr>
                     <tr>
                         <td class="fw-bold">Cantidad</td>
@@ -25,8 +25,8 @@
                         <td>{{ $products->categorias}}</td>
                     </tr>
                     <tr>
-                        <td class="fw-bold" id="valor">Precio Abastecimiento</td>
-                        <td>{{ $abastecimiento->valor}}</td>
+                        <td class="fw-bold" >Precio Abastecimiento</td>
+                        <td>{{ $products->valorUnitario}}</td>
                     </tr>
                 </tbody>
             </table>

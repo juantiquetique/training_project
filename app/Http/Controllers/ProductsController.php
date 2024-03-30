@@ -65,7 +65,7 @@ class ProductsController extends Controller
     {
         $datosProducts = $request->except('_token');
         Products::insert($datosProducts);
- 
+         
         return redirect()->route('products.index')->with('exito', '¡El registro se ha creado satisfactoriamente!');
     }
 
@@ -79,13 +79,13 @@ class ProductsController extends Controller
     {
         $products = Products::join('categorias', 'products.categoria_id', 'categorias.id',)
                                             ->select('products.id','products.nombre', 
-                                            'products.precio', 'products.Cantidad',
-                                            'categorias.nombre as categorias')
+                                            'products.precioVenta', 'products.Cantidad', ////cambie la palabra precio a precioVenta y agrego valorUnitario
+                                            'categorias.nombre as categorias', 'products.valorUnitario')
                                             ->where('products.id',$id)
                                             ->first();
         $abastecimiento = Abastecimiento::where('products_id', $id)
                                         ->orderBy('created_at', 'desc')
-                                        ->first();
+                                        ->first();        
         return view('products.show', compact('products', 'abastecimiento'));
    
     }

@@ -13,7 +13,7 @@ class CreateDetalleVentaTable extends Migration
      */
     public function up()
     {
-        Schema::create('detalle_ventas', function (Blueprint $table) {
+        Schema::create('detalle_venta', function (Blueprint $table) {
             $table->id();
             $table->foreignId('ventas_id')->constrained('ventas');
             $table->foreignId('products_id')->constrained('products');
@@ -32,11 +32,10 @@ class CreateDetalleVentaTable extends Migration
     public function down()
     {
         Schema::table('detalle_venta', function (Blueprint $table) {
+            $table->dropForeign('detalle_venta_ventas_id_foreign');
             $table->dropForeign('detalle_venta_products_id_foreign');
         });
-        Schema::table('detalle_venta', function (Blueprint $table) {
-            $table->dropForeign('detalle_venta_ventas_id_foreign');
-        });
+
         Schema::dropIfExists('detalle_venta');
     }
 }
